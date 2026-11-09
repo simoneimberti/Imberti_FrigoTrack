@@ -1,0 +1,32 @@
+Relazione – Scelte tecniche e limiti noti
+Scelte tecniche
+Com'è strutturato il progetto: Ho diviso il lavoro in due console app .NET 8 (Server e Client) che condividono la stessa soluzione. Tutto ciò che serve a entrambi (cioè Crypto.cs e SchemaValidator.cs) sta in una cartella comune (Comune/) ed è collegato direttamente ai due progetti: niente copie di codice da tenere allineate a mano. Per il resto, ho cercato di mantenere le cose semplici: poche classi in giro e tutto il server concentrato in un unico file.
+
+Come gestisco il server HTTP: Sfrutto HttpListener (già incluso in .NET). Un ciclo base si mette in ascolto e, per ogni richiesta che arriva, lancia un nuovo thread. In questo modo più client possono lavorare in parallelo, ognuno con la sua sessione e la sua chiave dedicata. Visto che le sessioni e le misure vengono toccate da più thread contemporaneamente, ho protetto tutte le operazioni critiche con dei lock.
+
+La parte di Diffie-Hellman: Uso il gruppo n. 14 dell'RFC 3526 (il primo a 2048 bit, con g = 2). I calcoli principali (A = g^a mod p e K = B^a mod p) li affido a BigInteger.ModPow, mentre la gestione dello scambio l'ho scritta io. I segreti a e b sono casuali a 256 bit. Visto che K è lungo 2048 bit e AES-256 richiede una chiave da 32 byte, uso SHA-256(K) come chiave finale.
+
+La cifratura: Vado sul sicuro con AES-GCM, che oltre a cifrare controlla anche che il messaggio non sia stato alterato lungo la strada (grazie al tag). Il nonce viene generato casualmente per ogni messaggio e viaggia subito prima del testo cifrato. Alla fine, la "busta" che gira contiene solo tre campi essenziali: session_id, ciphertext e tag.
+
+Come gestisco il JSON Schema: Per la validazione mi affido alla libreria JsonSchema.Net, usando i 10 file che ho messo nella cartella schemas/. Nel codice non ci sono controlli manuali sui singoli campi: persino la verifica su p e g è demandata allo schema (tramite il vincolo const). Il client valida sempre prima di cifrare, mentre il server fa lo stesso subito dopo aver decifrato. Se qualcosa non va, gli errori specificano subito qual è il campo errato.
+
+L'ordine dei controlli sul server: Quando arriva una richiesta, il server la controlla in questo ordine: prima verifica lo schema della busta, poi controlla che la sessione esista (restituendo 404 se manca o 401 se è scaduta), prova a decifrare (dandoci un 400 se il tag non torna), valida lo schema del messaggio interno (sempre 400 con il dettaglio del campo) e infine la elabora. Nota bene: se la decifratura fallisce, il messaggio viene scartato subito.
+
+Dove salvo i dati: Ogni volta che una misura viene accettata, il server la aggiunge a una lista insieme all'orario di arrivo e all'esito dell'allarme, e riscrive per intero il file data/readings.json. Quando il server riparte, ricarica tutto da lì, e l'endpoint /api/readings legge direttamente da questo file.
+
+Come ho testato il tutto: Nel client c'è un'apposita sezione (la voce 3 del menu) che lancia sette test automatici (ovviamente con il server acceso). Coprono tutti i cinque scenari richiesti — handshake riuscito, messaggio valido, messaggio non valido, busta manomessa e sessione inesistente — più i test specifici per l'allarme e la lettura delle misure.
+
+Limiti noti
+Manca l'autenticazione delle parti: Diffie-Hellman protegge solo da chi intercetta passivamente il traffico. Se qualcuno si mette in mezzo e fa due handshake separati (attacco man-in-the-middle), il sistema non se ne accorgerebbe. Per risolverlo servirebbe una firma digitale del server o una chiave pre-condivisa per ciascun sensore.
+
+Nessuna protezione contro i replay attack: Chiunque intercetti una busta valida può rispedirla tale e quale, e il server la accetterà di nuovo senza problemi. Si potrebbe risolvere facilmente aggiungendo un contatore o un timestamp validato all'interno del messaggio.
+
+Metadati in chiaro: Anche se il contenuto è al sicuro, restano visibili a chiunque l'endpoint contattato, la dimensione e l'orario dei messaggi, e l'ID della sessione (session_id).
+
+Controlli base sulla chiave pubblica: Oltre a verificare che sia in formato esadecimale, il server non controlla che la chiave A sia diversa da 0 e da 1.
+
+Nessun limite al traffico (Rate Limiting): Al momento non c'è alcun freno: chiunque potrebbe aprire un numero spropositato di sessioni o sovraccaricare il server inviando richieste enormi.
+
+Salvataggio "artigianale": Riscrivere l'intero file JSON a ogni singola misura va benissimo per un prototipo o un progetto di questo tipo, ma non reggerebbe in uno scenario reale con migliaia di sensori attivi.
+
+Test di integrazione, non unitari: I test richiedono che il server sia effettivamente acceso e in esecuzione; non sono test unitari isolati in memoria.
