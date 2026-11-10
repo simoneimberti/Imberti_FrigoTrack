@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Libreria che valida i JSON con gli schemi (draft 2020-12). Visual Studio la scarica da solo. -->
+    <PackageReference Include="JsonSchema.Net" Version="7.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- File condivisi con l'altro progetto: sono nella cartella Comune, non copiati -->
+    <Compile Include="..\Comune\*.cs" Link="Comune\%(Filename)%(Extension)" />
+    <!-- Mostra gli schemi in Visual Studio, cosi' si possono aprire da qui -->
+    <None Include="..\schemas\*.schema.json" Link="schemas\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

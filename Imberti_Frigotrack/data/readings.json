@@ -1,0 +1,312 @@
+[
+  {
+    "sensor_id": "CELLA-BG-007",
+    "timestamp": "2026-11-09T16:32:00Z",
+    "cargo_type": "pharma",
+    "temperature_c": 4.6,
+    "humidity": 55,
+    "battery": 87,
+    "received_at": "2026-11-09T16:32:00Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-RM-003",
+    "timestamp": "2026-11-09T16:32:34Z",
+    "cargo_type": "frozen",
+    "temperature_c": -20.1,
+    "humidity": 55,
+    "battery": 99,
+    "received_at": "2026-11-09T16:32:34Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CAMION-MI-002",
+    "timestamp": "2026-11-09T16:32:34Z",
+    "cargo_type": "food",
+    "temperature_c": 1.5,
+    "humidity": 57,
+    "battery": 99,
+    "received_at": "2026-11-09T16:32:34Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-BG-001",
+    "timestamp": "2026-11-09T16:32:34Z",
+    "cargo_type": "pharma",
+    "temperature_c": 5,
+    "humidity": 61,
+    "battery": 99,
+    "received_at": "2026-11-09T16:32:34Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-RM-003",
+    "timestamp": "2026-11-09T16:32:36Z",
+    "cargo_type": "frozen",
+    "temperature_c": -20.4,
+    "humidity": 51,
+    "battery": 98,
+    "received_at": "2026-11-09T16:32:36Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-BG-001",
+    "timestamp": "2026-11-09T16:32:36Z",
+    "cargo_type": "pharma",
+    "temperature_c": 5,
+    "humidity": 57,
+    "battery": 98,
+    "received_at": "2026-11-09T16:32:36Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CAMION-MI-002",
+    "timestamp": "2026-11-09T16:32:36Z",
+    "cargo_type": "food",
+    "temperature_c": 1.8,
+    "humidity": 59,
+    "battery": 98,
+    "received_at": "2026-11-09T16:32:36Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-RM-003",
+    "timestamp": "2026-11-09T16:32:38Z",
+    "cargo_type": "frozen",
+    "temperature_c": -20.5,
+    "humidity": 56,
+    "battery": 97,
+    "received_at": "2026-11-09T16:32:38Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CAMION-MI-002",
+    "timestamp": "2026-11-09T16:32:38Z",
+    "cargo_type": "food",
+    "temperature_c": 2.2,
+    "humidity": 57,
+    "battery": 97,
+    "received_at": "2026-11-09T16:32:38Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-BG-001",
+    "timestamp": "2026-11-09T16:32:38Z",
+    "cargo_type": "pharma",
+    "temperature_c": 5.1,
+    "humidity": 46,
+    "battery": 97,
+    "received_at": "2026-11-09T16:32:38Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-RM-003",
+    "timestamp": "2026-11-09T16:32:40Z",
+    "cargo_type": "frozen",
+    "temperature_c": -14.3,
+    "humidity": 60,
+    "battery": 96,
+    "received_at": "2026-11-09T16:32:40Z",
+    "alarm": true
+  },
+  {
+    "sensor_id": "CAMION-MI-002",
+    "timestamp": "2026-11-09T16:32:40Z",
+    "cargo_type": "food",
+    "temperature_c": 7.9,
+    "humidity": 55,
+    "battery": 96,
+    "received_at": "2026-11-09T16:32:40Z",
+    "alarm": true
+  },
+  {
+    "sensor_id": "CELLA-BG-001",
+    "timestamp": "2026-11-09T16:32:40Z",
+    "cargo_type": "pharma",
+    "temperature_c": 10.9,
+    "humidity": 48,
+    "battery": 96,
+    "received_at": "2026-11-09T16:32:40Z",
+    "alarm": true
+  },
+  {
+    "sensor_id": "CELLA-RM-003",
+    "timestamp": "2026-11-09T16:32:42Z",
+    "cargo_type": "frozen",
+    "temperature_c": -19.7,
+    "humidity": 63,
+    "battery": 95,
+    "received_at": "2026-11-09T16:32:42Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CAMION-MI-002",
+    "timestamp": "2026-11-09T16:32:42Z",
+    "cargo_type": "food",
+    "temperature_c": 1.6,
+    "humidity": 53,
+    "battery": 95,
+    "received_at": "2026-11-09T16:32:42Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-BG-001",
+    "timestamp": "2026-11-09T16:32:42Z",
+    "cargo_type": "pharma",
+    "temperature_c": 5.3,
+    "humidity": 56,
+    "battery": 95,
+    "received_at": "2026-11-09T16:32:42Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-RM-003",
+    "timestamp": "2026-11-09T16:32:44Z",
+    "cargo_type": "frozen",
+    "temperature_c": -20,
+    "humidity": 43,
+    "battery": 94,
+    "received_at": "2026-11-09T16:32:44Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CAMION-MI-002",
+    "timestamp": "2026-11-09T16:32:44Z",
+    "cargo_type": "food",
+    "temperature_c": 2.2,
+    "humidity": 62,
+    "battery": 94,
+    "received_at": "2026-11-09T16:32:44Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-BG-001",
+    "timestamp": "2026-11-09T16:32:44Z",
+    "cargo_type": "pharma",
+    "temperature_c": 5.1,
+    "humidity": 60,
+    "battery": 94,
+    "received_at": "2026-11-09T16:32:44Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-RM-003",
+    "timestamp": "2026-11-09T16:32:46Z",
+    "cargo_type": "frozen",
+    "temperature_c": -19.9,
+    "humidity": 50,
+    "battery": 93,
+    "received_at": "2026-11-09T16:32:46Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-BG-001",
+    "timestamp": "2026-11-09T16:32:46Z",
+    "cargo_type": "pharma",
+    "temperature_c": 5.4,
+    "humidity": 69,
+    "battery": 93,
+    "received_at": "2026-11-09T16:32:47Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CAMION-MI-002",
+    "timestamp": "2026-11-09T16:32:46Z",
+    "cargo_type": "food",
+    "temperature_c": 2.4,
+    "humidity": 43,
+    "battery": 93,
+    "received_at": "2026-11-09T16:32:47Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-RM-003",
+    "timestamp": "2026-11-09T16:32:48Z",
+    "cargo_type": "frozen",
+    "temperature_c": -13.9,
+    "humidity": 53,
+    "battery": 92,
+    "received_at": "2026-11-09T16:32:48Z",
+    "alarm": true
+  },
+  {
+    "sensor_id": "CELLA-BG-001",
+    "timestamp": "2026-11-09T16:32:49Z",
+    "cargo_type": "pharma",
+    "temperature_c": 11.2,
+    "humidity": 62,
+    "battery": 92,
+    "received_at": "2026-11-09T16:32:49Z",
+    "alarm": true
+  },
+  {
+    "sensor_id": "CAMION-MI-002",
+    "timestamp": "2026-11-09T16:32:49Z",
+    "cargo_type": "food",
+    "temperature_c": 7.9,
+    "humidity": 41,
+    "battery": 92,
+    "received_at": "2026-11-09T16:32:49Z",
+    "alarm": true
+  },
+  {
+    "sensor_id": "CELLA-RM-003",
+    "timestamp": "2026-11-09T16:32:50Z",
+    "cargo_type": "frozen",
+    "temperature_c": -19.5,
+    "humidity": 45,
+    "battery": 91,
+    "received_at": "2026-11-09T16:32:50Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-BG-001",
+    "timestamp": "2026-11-09T16:32:51Z",
+    "cargo_type": "pharma",
+    "temperature_c": 4.7,
+    "humidity": 66,
+    "battery": 91,
+    "received_at": "2026-11-09T16:32:51Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CAMION-MI-002",
+    "timestamp": "2026-11-09T16:32:51Z",
+    "cargo_type": "food",
+    "temperature_c": 2,
+    "humidity": 57,
+    "battery": 91,
+    "received_at": "2026-11-09T16:32:51Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-RM-003",
+    "timestamp": "2026-11-09T16:32:52Z",
+    "cargo_type": "frozen",
+    "temperature_c": -20.1,
+    "humidity": 55,
+    "battery": 90,
+    "received_at": "2026-11-09T16:32:52Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CELLA-BG-001",
+    "timestamp": "2026-11-09T16:32:53Z",
+    "cargo_type": "pharma",
+    "temperature_c": 5.1,
+    "humidity": 58,
+    "battery": 90,
+    "received_at": "2026-11-09T16:32:53Z",
+    "alarm": false
+  },
+  {
+    "sensor_id": "CAMION-MI-002",
+    "timestamp": "2026-11-09T16:32:53Z",
+    "cargo_type": "food",
+    "temperature_c": 1.9,
+    "humidity": 45,
+    "battery": 90,
+    "received_at": "2026-11-09T16:32:53Z",
+    "alarm": false
+  }
+]
